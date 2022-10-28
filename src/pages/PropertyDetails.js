@@ -5,7 +5,7 @@ import { housesData } from '../data';
 //  useParams
 import { useParams } from 'react-router-dom';
 // import icons
-import { BiBed, BiBath, BiArea, BiPhone } from 'react-icons/bi';
+import { BiBed, BiBath, BiArea, BiPhone} from 'react-icons/bi';
 // import link
 import { Link } from 'react-router-dom';
 
@@ -31,7 +31,7 @@ const PropertyDetails = () => {
           </div>
         </div>
         <div className='text-3xl font-semibold text-violet-600'>
-          $ {property.price}
+          ₹{property.price}
         </div>
       </div>
       <div className='flex flex-col items-start gap-8 lg:flex-row'>
@@ -58,7 +58,7 @@ const PropertyDetails = () => {
         <div className='flex-1 w-full mb-8 bg-white border border-gray-300 rounded-lg px-6 py-8'>
           <div className='flex items-center gap-x-4 mb-8'>
             <div className='w-20 h-20 p-1 border border-gray-300 rounded-full'>
-              <img src={property.agent.image}></img>
+              <img src={property.agent.image} alt="agent"></img>
             </div>
             <div>
               <div className='font-bold text-lg'>{property.agent.name}</div>
@@ -96,9 +96,11 @@ const PropertyDetails = () => {
               >
                 Send message
               </button>
-              <button className='border border-violet-700 text-violet-700 hover:border-purple-600 hover:text-purple-600 rounded p-4 text-sm w-full transition'>
-                Call
-              </button>
+              <a href="tel:919695680505" className='border border-violet-700 text-violet-700 hover:border-purple-600 hover:text-purple-600 rounded p-4 text-sm  transition'>
+                <div className='flex flex-row'>
+                  <BiPhone size='25' />  &nbsp; <span> Call</span>
+                </div>
+              </a>
             </div>
           </form>
         </div>
